@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         isGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-        Debug.Log(isGround);
         if(horizontalInput!=0)
         {
            Move(horizontalInput);
@@ -54,6 +53,7 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumFore);
+
     }
     void Flip()
     {
