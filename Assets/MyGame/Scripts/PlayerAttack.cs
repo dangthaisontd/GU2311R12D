@@ -9,6 +9,11 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] Transform pointAttack;
     [SerializeField] float radiusAttack;
     [SerializeField] LayerMask enemyLayer;
+    float nextAttack=0;
+    public float attackRate = 0.2f;
+    public float attackAfterTime = 0.15f;
+    public int damageToGive =10;
+    public Vector2 fore;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,17 +26,32 @@ public class PlayerAttack : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.R))
         {
-            Attack();
+            if (GetKeyR())
+            {
+                anim.SetTrigger(idAttack);
+            }
         }
     }
-    void  Attack()
+    private bool GetKeyR()
     {
-        anim.SetTrigger(idAttack);
+        if (Time.time > nextAttack)
+        {
+            nextAttack = Time.time + attackRate;
+            StartCoroutine(Attack(attackAfterTime));
+            return true;
+        }
+        else
+            return false;
+    } 
+    IEnumerator  Attack(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        
         Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(pointAttack.position, radiusAttack, enemyLayer);
         
         foreach (var enemy in hitEnemys)
         {
-            enemy.GetComponent<BehemothAI>().TakeDamage();
+            enemy.GetComponent<ICanTakeDamage>().TakeDamage(damageToGive,fore,gameObject);
         }
     }
     private void OnDrawGizmosSelected()

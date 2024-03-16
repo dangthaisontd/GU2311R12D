@@ -4,9 +4,8 @@ using System.Drawing;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class BehemothAI : EnemyAI
+public class BehemothAI : EnemyAI,ICanTakeDamage
 {
-
     [SerializeField]private Rigidbody2D rb;
     [SerializeField] private Transform pointA;
     [SerializeField] private Transform pointB;
@@ -17,23 +16,15 @@ public class BehemothAI : EnemyAI
     private Vector3 targetPos;
     [SerializeField] private float speedMove = 3;
     [SerializeField] private float stopDistance = 1;
+    [SerializeField] GameObject HurtEffect;
     private bool isDead = false;
+    
     // Start is called before the first frame update
     void Start()
     {
         transform.position = pointA.position;
         target = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-    public void TakeDamage()
-    {
-        health -= attack;
-        Debug.Log(health);
-        if (health <= 0)
-        {
-            isDead=true;
-            anim.SetTrigger("IsDead");
-            Invoke("DesTroys", 3f);
-        }
+        health = maxHealth;
     }
     void DesTroys()
     {
@@ -74,10 +65,21 @@ public class BehemothAI : EnemyAI
             else if(target.position.x - transform.position.x > 0)
             {
                 sp.flipX = false;
-            }
-                 
-        }
-              
+            }       
+        }           
      }
-        
+    public void TakeDamage(int damage, Vector2 force, GameObject instigator)
+    {
+        if (isDead) return;
+        health -= damage;
+        if (HurtEffect != null)
+            Instantiate(HurtEffect, instigator.transform.position, Quaternion.identity);
+        Debug.Log(health);
+        if (health <= 0)
+        {
+            isDead = true;
+            anim.SetTrigger("IsDead");
+            Invoke("DesTroys", 3f);
+        }
+    }
 }

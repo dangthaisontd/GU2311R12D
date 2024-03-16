@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float horizontalInput = Input.GetAxis("Horizontal");
         isGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         if(horizontalInput!=0)
         {

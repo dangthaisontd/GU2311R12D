@@ -205,7 +205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27362012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.15, y: 0, z: 0}
+  m_LocalPosition: {x: -7.36, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -317,6 +317,10 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
+  attackRate: 0.2
+  attackAfterTime: 0.15
+  damageToGive: 10
+  fore: {x: 0, y: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +577,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  attack: 20
   rb: {fileID: 1437815887}
   pointA: {fileID: 1343559364}
   pointB: {fileID: 1197687990}
@@ -582,6 +585,7 @@ MonoBehaviour:
   anim: {fileID: 1906271372}
   speedMove: 3
   stopDistance: 3
+  HurtEffect: {fileID: 113216, guid: 20400a4349ca29f41b9c336e87901ff8, type: 3}
 --- !u!61 &1437815886
 BoxCollider2D:
   m_ObjectHideFlags: 0
