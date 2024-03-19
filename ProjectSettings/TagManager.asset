@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 3542818449
+    locked: 0
+  - name: Ground
+    uniqueID: 2124817617
+    locked: 0
+  - name: Character
+    uniqueID: 103727281
+    locked: 0
+  - name: Tree Font
+    uniqueID: 2742634799
+    locked: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -17,18 +18,17 @@ public class BehemothAI : EnemyAI,ICanTakeDamage
     [SerializeField] private float speedMove = 3;
     [SerializeField] private float stopDistance = 1;
     [SerializeField] GameObject HurtEffect;
+    [SerializeField] private float rateTime=1f;
     private bool isDead = false;
-    
+    private float nextTime = 0;
+    [SerializeField] int damageToGive = 5;
+    public Vector2 fore;
     // Start is called before the first frame update
     void Start()
     {
         transform.position = pointA.position;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         health = maxHealth;
-    }
-    void DesTroys()
-    {
-        Destroy(gameObject);
     }
     // Update is called once per frame
     void Update()
@@ -79,7 +79,23 @@ public class BehemothAI : EnemyAI,ICanTakeDamage
         {
             isDead = true;
             anim.SetTrigger("IsDead");
-            Invoke("DesTroys", 3f);
+            Destroy(gameObject, 3f);
         }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        PlayerController player = target.GetComponent<PlayerController>();
+        if (isDead == true) return;
+        if(player == null) return;
+        if (collision.CompareTag("Player"))
+        {
+            if (Time.time > nextTime)
+            {
+                nextTime = Time.time + rateTime;
+                //lam cai gi do
+                player.TakeDamage(damageToGive, fore, gameObject);
+            }
+        }
+        
     }
 }
