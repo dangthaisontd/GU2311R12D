@@ -74,7 +74,6 @@ public class BehemothAI : EnemyAI,ICanTakeDamage
         health -= damage;
         if (HurtEffect != null)
             Instantiate(HurtEffect, instigator.transform.position, Quaternion.identity);
-        Debug.Log(health);
         if (health <= 0)
         {
             isDead = true;

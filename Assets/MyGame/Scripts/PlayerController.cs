@@ -14,8 +14,9 @@ public class PlayerController : MonoBehaviour,ICanTakeDamage
     private Animator anim;
     private bool isGround;
     private bool facingRight = true;
-    private int idRunning;
-    private int isDead;
+    private int idRunningId;
+    private int isDeadId;
+    private int isJumId;
     [SerializeField] int maxHealth=100;
     private int currentHealth;
     private bool isPlayerDead=false;
@@ -24,8 +25,9 @@ public class PlayerController : MonoBehaviour,ICanTakeDamage
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        idRunning = Animator.StringToHash("isRunning");
-        isDead = Animator.StringToHash("isDead");
+        idRunningId = Animator.StringToHash("isRunning");
+        isDeadId = Animator.StringToHash("isDead");
+        isJumId = Animator.StringToHash("IsJum");
         currentHealth = maxHealth;
     }
 
@@ -40,11 +42,15 @@ public class PlayerController : MonoBehaviour,ICanTakeDamage
         }
         else
         {
-            anim.SetBool(idRunning, false);
+            anim.SetBool(idRunningId, false);
         }
         if(isGround&&Input.GetKeyDown(KeyCode.Space)&&isPlayerDead==false)
         {
             Jump();
+        }
+        if (Input.GetKeyUp(KeyCode.Space) && isPlayerDead == false)
+        {
+            NotJump();
         }
     }
     private void Move(float dir)
@@ -54,12 +60,16 @@ public class PlayerController : MonoBehaviour,ICanTakeDamage
         {
             Flip();
         }
-        anim.SetBool(idRunning, true);
+        anim.SetBool(idRunningId, true);
     }
     void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumFore);
-
+        anim.SetBool(isJumId,true);
+    }
+     void NotJump()
+    {
+        anim.SetBool(isJumId, false);
     }
     void Flip()
     {
@@ -78,7 +88,7 @@ public class PlayerController : MonoBehaviour,ICanTakeDamage
         {
             isPlayerDead = true;
             currentHealth=0;
-            anim.SetTrigger(isDead);
+            anim.SetTrigger(isDeadId);
             //Gamemanger da chet
         }
    
