@@ -573,7 +573,6 @@ GameObject:
   m_Component:
   - component: {fileID: 524805358}
   - component: {fileID: 524805360}
-  - component: {fileID: 524805359}
   m_Layer: 0
   m_Name: background 2 (2)
   m_TagString: Untagged
@@ -596,19 +595,6 @@ Transform:
   m_Father: {fileID: 369289551}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &524805359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524805357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bfd8ff9f357a544b815be4c959e6568, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 20
 --- !u!212 &524805360
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2314,7 +2300,7 @@ Tilemap:
       - {fileID: 3786080894526622295, guid: ea3d66a7edd9d46d38e40be89ae8d3cf, type: 3}
       - {fileID: 5045660051849922305, guid: ea3d66a7edd9d46d38e40be89ae8d3cf, type: 3}
       - {fileID: 5612536237972652912, guid: ea3d66a7edd9d46d38e40be89ae8d3cf, type: 3}
-      m_AnimationSpeed: 12.956073
+      m_AnimationSpeed: 27.99398
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 0, y: -5, z: 0}
@@ -2325,7 +2311,7 @@ Tilemap:
       - {fileID: 3786080894526622295, guid: ea3d66a7edd9d46d38e40be89ae8d3cf, type: 3}
       - {fileID: 5045660051849922305, guid: ea3d66a7edd9d46d38e40be89ae8d3cf, type: 3}
       - {fileID: 5612536237972652912, guid: ea3d66a7edd9d46d38e40be89ae8d3cf, type: 3}
-      m_AnimationSpeed: 14.873529
+      m_AnimationSpeed: 6.4938126
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -1, y: -4, z: 0}
@@ -2336,7 +2322,7 @@ Tilemap:
       - {fileID: 7196270143389622831, guid: ea3d66a7edd9d46d38e40be89ae8d3cf, type: 3}
       - {fileID: 6029957480157117390, guid: ea3d66a7edd9d46d38e40be89ae8d3cf, type: 3}
       - {fileID: -2507161886035769597, guid: ea3d66a7edd9d46d38e40be89ae8d3cf, type: 3}
-      m_AnimationSpeed: 19.321705
+      m_AnimationSpeed: 22.228188
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 0, y: -4, z: 0}
@@ -2347,7 +2333,7 @@ Tilemap:
       - {fileID: 7196270143389622831, guid: ea3d66a7edd9d46d38e40be89ae8d3cf, type: 3}
       - {fileID: 6029957480157117390, guid: ea3d66a7edd9d46d38e40be89ae8d3cf, type: 3}
       - {fileID: -2507161886035769597, guid: ea3d66a7edd9d46d38e40be89ae8d3cf, type: 3}
-      m_AnimationSpeed: 2.8052332
+      m_AnimationSpeed: 28.2416
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -2675,7 +2661,6 @@ GameObject:
   m_Component:
   - component: {fileID: 893792835}
   - component: {fileID: 893792837}
-  - component: {fileID: 893792836}
   m_Layer: 0
   m_Name: background 2 (1)
   m_TagString: Untagged
@@ -2698,19 +2683,6 @@ Transform:
   m_Father: {fileID: 369289551}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &893792836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893792834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bfd8ff9f357a544b815be4c959e6568, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 20
 --- !u!212 &893792837
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2999,7 +2971,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1271475371}
   - component: {fileID: 1271475370}
-  - component: {fileID: 1271475372}
   m_Layer: 0
   m_Name: background 2
   m_TagString: Untagged
@@ -3074,19 +3045,6 @@ Transform:
   m_Father: {fileID: 369289551}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1271475372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271475369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bfd8ff9f357a544b815be4c959e6568, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 20
 --- !u!1 &1290205785
 GameObject:
   m_ObjectHideFlags: 0
