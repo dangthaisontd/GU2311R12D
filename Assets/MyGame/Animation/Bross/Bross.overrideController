@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bross
+  m_Controller: {fileID: 9100000, guid: 78f48135b74ba014288d4f9771ff74d0, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: e6816a73b5bc9ed4f8c1144b1b33f55d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8fb00148159b6134582431a78c4bd800, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 26ee54404bc06854ca2748474a7c62b3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c34b338e4472a1447be25ad3f7365dd8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 446e35a41f206b54e9a0f22cf62d61e4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5815abd74e5ecb04d83981e34dade10f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 984a422d67708ee429d01213d24f2cee, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d0d38d0560b64fe4595fe1eb3c676920, type: 2}
