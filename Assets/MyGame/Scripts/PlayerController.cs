@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour,ICanTakeDamage
     [SerializeField] int maxHealth=100;
     private int currentHealth;
     private bool isPlayerDead=false;
+    [SerializeField] private int _coin = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour,ICanTakeDamage
         isDeadId = Animator.StringToHash("isDead");
         isJumId = Animator.StringToHash("IsJum");
         currentHealth = maxHealth;
+        EventManagerGame.onHealth?.Invoke(currentHealth);
     }
 
     // Update is called once per frame
@@ -83,6 +85,7 @@ public class PlayerController : MonoBehaviour,ICanTakeDamage
     {
         if(isPlayerDead) return;
         currentHealth -= damage;
+        EventManagerGame.onHealth?.Invoke(currentHealth);
         Debug.Log("Player Health" + currentHealth);
         if(currentHealth < 0)
         {
@@ -93,4 +96,15 @@ public class PlayerController : MonoBehaviour,ICanTakeDamage
         }
    
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            _coin += 1;
+            Destroy(other.gameObject);
+            EventManagerGame.onCoin?.Invoke(_coin);
+        }
+    }
+
+    
 }
