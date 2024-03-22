@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     void FinishGame()
     {
-        //SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("GameOver");
     }
     private void OnDisable()
     {

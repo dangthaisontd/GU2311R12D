@@ -10,10 +10,12 @@ public class PlayerFire : MonoBehaviour
     public Animator anim;
     private Rigidbody2D rb;
     private int isAttackId;
+    private PlayerController player;
     // Start is called before the first frame update
     void Start()
     {
         isAttackId = Animator.StringToHash("isAttack");
+        player = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,8 @@ public class PlayerFire : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
+            if (player.isPlayerDead == true)
+                return;
             anim.SetTrigger(isAttackId);
             GameObject projevtive = Instantiate(projectivePrefabs, pointFire.position, Quaternion.identity);
             rb = projevtive.GetComponent<Rigidbody2D>();

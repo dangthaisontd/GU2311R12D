@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour,ICanTakeDamage
     private int isJumId;
     [SerializeField] int maxHealth=100;
     private int currentHealth;
-    private bool isPlayerDead=false;
+    public bool isPlayerDead=false;
     [SerializeField] private int _coin = 0;
     // Start is called before the first frame update
     void Start()
@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour,ICanTakeDamage
     {
         rb.velocity = new Vector2(rb.velocity.x, jumFore);
         anim.SetBool(isJumId,true);
+        AudioManager.Instance.PlaySoundEffectMusic(AudioManager.Instance.jumAudio);
     }
      void NotJump()
     {
@@ -103,6 +104,7 @@ public class PlayerController : MonoBehaviour,ICanTakeDamage
             _coin += 1;
             Destroy(other.gameObject);
             EventManagerGame.onCoin?.Invoke(_coin);
+            AudioManager.Instance.PlaySoundEffectMusic(AudioManager.Instance.Colect);
         }
     }
 

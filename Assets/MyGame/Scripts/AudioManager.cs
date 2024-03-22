@@ -17,8 +17,13 @@ public class AudioManager : MonoBehaviour
     public AudioClip click;
     public AudioClip fireAudio;
     public AudioClip explusion;
+    public AudioClip Colect;
+    public AudioClip jumAudio;
+
+
     public AudioSource backgroundMusic;
     public AudioSource soundFx;
+    
     private void Start()
     {
         if (_instance == null)
