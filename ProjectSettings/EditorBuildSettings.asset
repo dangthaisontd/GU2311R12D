@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/MyGame/Scene/SpashScene.unity
+    guid: c236d986329c9a744852d78dadf53733
+  - enabled: 1
+    path: Assets/MyGame/Scene/Option.unity
+    guid: ae59c882e13a0504dbd1d3e863fb302a
+  - enabled: 1
+    path: Assets/MyGame/Scene/Main.unity
+    guid: a75bcafb3c59bd14f883c74afa4af024
   m_configObjects: {}

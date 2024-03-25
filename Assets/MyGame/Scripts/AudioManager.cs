@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip explusion;
     public AudioClip Colect;
     public AudioClip jumAudio;
-
+    public AudioClip Water;
 
     public AudioSource backgroundMusic;
     public AudioSource soundFx;
